@@ -1,0 +1,91 @@
+@charset "utf-8";
+body{
+    margin: 0 16px;
+}
+.wrap {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+video {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+h1 {
+    color: #0094ff;
+    position: fixed;
+    margin: 0;
+    top: 10px;
+    left: 30px;
+    z-index: 10;
+}
+h2 {
+    color: #0094ff;
+    text-align: center;
+    font-size: 32px;
+}
+
+#calendar{
+    width: 100%;
+    pointer-events: none;
+}
+
+.flatpickr-calendar {
+    pointer-events: none;
+    user-select: none;
+    margin: 0 auto;
+}
+.flatpickr-months{
+    display: none;
+}
+
+.flatpickr-day{
+    font-size: 28px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.flatpickr-day.selected {
+    background: none;
+    color: #393939;
+    border: 1px solid #ccc;
+}
+.flatpickr-weekday:first-child, .flatpickr-day:nth-child(7n + 1){
+    color: red;
+}
+.flatpickr-weekday:last-child, .flatpickr-day:nth-child(7n){
+    color: mediumblue;
+}
+.flatpickr-day.nextMonthDay{
+    height: 0;
+}
+
+.flatpickr-day[aria-label="7月 2, 2026"]{
+    background: linear-gradient(90deg, red,yellow,lime,#57f,magenta);
+    font-weight: 500;
+}
+.nextMonthDay[aria-label="7月 2, 2026"]{
+    background:none;
+}
+
+@media screen and (max-width: 720px) {
+    body{
+        margin:0;
+    }
+    #calendar{
+        position: absolute;
+    }
+    .video{
+        position: fixed;
+        z-index: -8;
+    }
+    .flatpickr-calendar{
+        background-color: #fff6;
+    }
+    h2{
+        -webkit-text-stroke: 6px #fff;
+        paint-order: stroke fill;
+    }
+}

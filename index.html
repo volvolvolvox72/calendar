@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>2026カレンダー</title>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js" defer></script>
+    <script>
+        window.onload = function (){
+            let wrap = document.getElementById("calendar")
+            for (let i=0; i<12; i++){
+                let monthTitle = document.createElement("h2");
+                monthTitle.textContent = i+1 + "月";
+                wrap.appendChild(monthTitle);
+
+                let monthDiv = document.createElement("div");
+                wrap.appendChild(monthDiv);
+                flatpickr(monthDiv, {
+                    locale     : 'ja',
+                    defaultDate: new Date(2026, i, 1),
+                    inline: true
+                });
+            };
+            document.querySelectorAll(".prevMonthDay").forEach(function (el){
+                el.textContent = "";
+            });
+            document.querySelectorAll(".nextMonthDay").forEach(function (el){
+                el.textContent = "";
+            });
+
+        }
+        function play() {
+            document.getElementById("video").play();
+        }
+    </script>
+</head>
+<body>
+    <h1>2026</h1>
+    <div class="wrap">
+        <div id="calendar"></div>
+        <div class="video"><video src="movie.mov" onclick="play()"></video></div>
+    </div>
+</body>
+</html>
