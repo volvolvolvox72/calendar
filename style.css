@@ -35,7 +35,8 @@ h2 {
 .flatpickr-calendar {
     pointer-events: none;
     user-select: none;
-    margin: 0 auto;
+    margin: 0 auto 80px;
+    transform: scale(1.2);
 }
 .flatpickr-months{
     display: none;
@@ -70,7 +71,7 @@ h2 {
     background:none;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 777px) {
     body{
         margin:0;
     }
